@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build_windows:
+    name: windows build
+    runs-on: windows-2019
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Restore cached dependencies
+      id: cache-vcpkg
+      uses: actions/cache@v1
+      with:
+        path: C:/vcpkg/installed
+        key: cache-vcpkg
+
+    - name: Install dependencies
+      if: steps.cache-vcpkg.outputs.cache-hit != 'true'
+      run: vcpkg install sqlite3:x86-windows zlib:x86-windows liblzma:x86-windows
+
+    - name: Setup vcpkg
+      run: vcpkg integrate install
+
+    - name: Setup MSBuild
+      uses: warrenbuckley/Setup-MSBuild@v1
+
+    - name: MSBuild
+      working-directory: D:/a/romdbLauncher/romdbLauncher
+      run: msbuild romdbLauncher.vcxproj /p:Configuration=Release /p:Platform=Win32
+
+    - uses: actions/upload-artifact@v1
+      with:
+        name: romdbLauncher-windows-x86
+        path: D:/a/romdbLauncher/romdbLauncher/Release
