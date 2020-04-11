@@ -47,6 +47,7 @@ void Config::load()
 	lineActiveSystems = -1;
 	lineCurrentSearch = -1;
 
+	configLines.clear();
 	romdbFiles.clear();
 	systems.clear();
 

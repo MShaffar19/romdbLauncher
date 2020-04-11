@@ -30,6 +30,14 @@ namespace utils
 		return str;
 	}
 
+	std::pair<std::string_view, std::string_view> splitFileExtension(const std::string_view str)
+	{
+		auto pos = str.find_last_of('.');
+		if (pos != std::string_view::npos)
+			return std::make_pair(str.substr(0, pos), str.substr(pos, str.size() - pos));
+		return std::make_pair(str, "");
+	};
+
 	std::pair<std::string, std::string> splitStringIn2(const std::string& str, char delimiter)
 	{
 		auto pos = str.find(delimiter, 0);
@@ -64,14 +72,14 @@ namespace utils
 		return str;
 	}
 
-	stringSetNoCase filterStrings(stringSetNoCase& strings, std::string startsWith_)
+	std::vector<std::string> filterStrings(stringSetNoCase& strings, std::string startsWith_)
 	{
-		stringSetNoCase filtered;
+		std::vector<std::string> filtered;
 		for (auto it = strings.begin(); it != strings.end();)
 		{
 			if (startsWith(*it, startsWith_))
 			{
-				filtered.insert(*it);
+				filtered.push_back(*it);
 				strings.erase(it++);
 			}
 			else

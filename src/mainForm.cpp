@@ -328,7 +328,7 @@ void MainForm::SearchMedia(const std::string& search)
 	searchResults.clear();
 	for (size_t i = 0; i < romdbs.size(); i++)
 	{
-		romdbs[i].searchMedia("%" + utils::replaceString(search, " "sv, "%"sv) + "%", i, searchResults);
+		romdbs[i].searchMedia("%" + utils::replaceString(search, " "sv, "%"sv) + "%", i, false, searchResults);
 	}
 	UpdateSearchResultsLv(config.includeMedia);
 }

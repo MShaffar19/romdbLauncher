@@ -96,7 +96,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>.\thirdparty\Hash\src;.\thirdparty\sqlite3pp\headeronly_src;.\thirdparty\utfcpp\source;.\thirdparty\xdelta3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\thirdparty\Hash\src;.\thirdparty\NaturalSort;.\thirdparty\physfs\src;.\thirdparty\sqlite3pp\headeronly_src;.\thirdparty\utfcpp\source;.\thirdparty\xdelta3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -114,7 +114,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>.\thirdparty\Hash\src;.\thirdparty\sqlite3pp\headeronly_src;.\thirdparty\utfcpp\source;.\thirdparty\xdelta3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\thirdparty\Hash\src;.\thirdparty\NaturalSort;.\thirdparty\physfs\src;.\thirdparty\sqlite3pp\headeronly_src;.\thirdparty\utfcpp\source;.\thirdparty\xdelta3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -134,7 +134,7 @@
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>.\thirdparty\Hash\src;.\thirdparty\sqlite3pp\headeronly_src;.\thirdparty\utfcpp\source;.\thirdparty\xdelta3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\thirdparty\Hash\src;.\thirdparty\NaturalSort;.\thirdparty\physfs\src;.\thirdparty\sqlite3pp\headeronly_src;.\thirdparty\utfcpp\source;.\thirdparty\xdelta3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -157,7 +157,7 @@
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>.\thirdparty\Hash\src;.\thirdparty\sqlite3pp\headeronly_src;.\thirdparty\utfcpp\source;.\thirdparty\xdelta3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\thirdparty\Hash\src;.\thirdparty\NaturalSort;.\thirdparty\physfs\src;.\thirdparty\sqlite3pp\headeronly_src;.\thirdparty\utfcpp\source;.\thirdparty\xdelta3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -169,6 +169,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\7zip.h" />
+    <ClInclude Include="src\archive.h" />
     <ClInclude Include="src\config.h" />
     <ClInclude Include="src\file.h" />
     <ClInclude Include="src\framework.h" />
@@ -186,6 +188,8 @@
     <ClInclude Include="src\wtextbox.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\7zip.cpp" />
+    <ClCompile Include="src\archive.cpp" />
     <ClCompile Include="src\config.cpp" />
     <ClCompile Include="src\file.cpp" />
     <ClCompile Include="src\main.cpp" />

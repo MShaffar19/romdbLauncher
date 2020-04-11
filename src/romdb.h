@@ -82,10 +82,11 @@ public:
 	void verify();
 
 	// search for media name and return system/media/files
-	std::vector<SystemMediaFiles> searchMedia(const std::string& search, size_t index);
+	std::vector<SystemMediaFiles> searchMedia(const std::string& search, size_t index, bool getArchives);
 
 	// search for media name and return system/media/files
-	void searchMedia(const std::string& search, size_t index, std::vector<SystemMediaFiles>& searchResults);
+	void searchMedia(
+		const std::string& search, size_t index, bool getArchives, std::vector<SystemMediaFiles>& searchResults);
 
 	// gets all system codes -> names
 	void getSystems(std::vector<std::pair<std::string, std::string>>& systems);
