@@ -28,7 +28,7 @@ jobs:
       run: vcpkg integrate install
 
     - name: Setup MSBuild
-      uses: warrenbuckley/Setup-MSBuild@v1
+      uses: microsoft/setup-msbuild@v1.0.2
 
     - name: MSBuild
       working-directory: D:/a/romdbLauncher/romdbLauncher
