@@ -424,10 +424,12 @@ void MainForm::RunRom(int srId, int mediaId, int fileId)
 
 				argsStr = L"\"" + emuPath.wstring() + L"\" " + argsStr;
 
+				auto currentDir = emuPath.parent_path().wstring();
+
 				emuStartInfo = { sizeof(emuStartInfo) };
 				emuProcInfo = {};
-				if (CreateProcessW(emuPath.wstring().c_str(), (WCHAR*)argsStr.c_str(), 0, 0, TRUE, 0, 0, 0,
-						&emuStartInfo, &emuProcInfo))
+				if (CreateProcessW(emuPath.wstring().c_str(), (WCHAR*)argsStr.c_str(), 0, 0, TRUE, 0, 0,
+						currentDir.c_str(), &emuStartInfo, &emuProcInfo))
 				{
 					SetTimer(TIMER_PROCESS, 100);
 					trayText = L"Running " + utils::str2wstr(file.name);
